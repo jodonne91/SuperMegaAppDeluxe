@@ -1,0 +1,32 @@
+
+/*   HEADER PORTAL   */
+
+.header-button{
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;
+	position: relative;
+	display: inline-block;
+	font-size: large;
+	padding: 6px 12px 3px 12px;
+	border-radius: 9px 9px 0 0;
+	background: black;
+	top: 17px;
+	border: 2px solid #06FF00;
+}
+
+
+header{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: #06FF00;
+	position: relative;
+	display: block;
+}
+
+header h5{
+	position: relative;
+	display: inline-block;
+	margin-left: 20px;
+}

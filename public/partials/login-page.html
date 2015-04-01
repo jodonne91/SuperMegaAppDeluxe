@@ -1,0 +1,11 @@
+<form class='login-form' name='login-form' ng-submit='loginCtrl.loginSubmit()'>
+        <span>Username: <input type = 'text' class='login-name-input' name='login-form' ng-model='loginCtrl.userName'></input></span>
+
+        <span>Password: <input type='password' class='login-pass-input' name='login-form' ng-model='loginCtrl.password'></input></span>
+
+        <span ng-show='showSignup()'> Confirm Password: <input type='password' class='login-pass-input' name='login-form' ng-model='loginCtrl.passwordConfirm'></input></span>
+        
+        <button class='login-submit-button' name='login-form'>submit</button>
+
+        <p ng-show='showLoginError()' class='login-error'>UserName and Password combination not found</p>
+</form>

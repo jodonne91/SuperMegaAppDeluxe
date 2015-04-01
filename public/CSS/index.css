@@ -1,0 +1,52 @@
+
+
+body{
+	margin: 0;
+}
+
+.main {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: #06FF00;
+	height: 100vh;
+}
+
+
+.title-bar{
+	text-align: center;
+	margin: 0;
+	margin-bottom: -2px;
+	padding: 0;
+	font-size: 30px;
+	background-color: #06FF00;
+	color: black;
+}
+
+.title-bar h1{
+	margin: 0;
+	padding: 0;
+}
+
+.tab{
+	margin-right: 8px;
+	float: left;
+	position: relative;
+	display: inline-block;
+	font-size: large;
+	padding: 6px 12px 3px 12px;
+	border-radius: 0 0 9px 9px;
+	background: black;
+	border: 2px solid #06FF00;
+	color: #06FF00;
+}
+
+.search-users-form{
+	position: relative;
+	top: 100px;
+}
+
+.SPACE-INVADERS{
+	position: absolute;
+	bottom: 20px;
+}

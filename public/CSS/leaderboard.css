@@ -1,0 +1,22 @@
+
+/*   LEADERBOARD PORTAL  */ 
+
+.leaderboard-table{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 20px;
+}
+
+.leaderboard-table thead{
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.leaderboard-table-header{
+	border-bottom: 2px solid #06FF00;
+}
+
+.leaderboard-user td{
+}

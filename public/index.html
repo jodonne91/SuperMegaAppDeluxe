@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html>
-  <head>    
-    <link rel="stylesheet" href="libs/mocha.css" />  <!-- reference to mocha -->
+<html ng-app = 'app'>
+  <head>
+
+    <link href='CSS/index.css' rel="stylesheet" />    <!-- reference to css stylesheet -->
+    <link href='CSS/header.css' rel='stylesheet'/>
+    <link href='CSS/login.css' rel='stylesheet'/>
+    <link href='CSS/leaderboard.css' rel='stylesheet'/>
+    <link href='CSS/userpage.css' rel='stylesheet'/>
     <script src="libs/underscore.js"></script>    <!-- reference to underscore -->
     <script src="libs/jquery.js"></script>      <!-- reference to jQuery -->
-    <script src="index.js"></script>            <!-- reference to js script -->
-    <link href="index.css" rel="stylesheet" /></script>    <!-- reference to css stylesheet -->
-    <script src="libs/handlebars.js"></script>
-    <script src="libs/backbone.js"></script>
+    <script src='libs/angular.js'></script>
+    <script src='js/file.js'></script>
+    <script src="js/index.js"></script>            <!-- reference to js script -->
 
   </head>
 
   
   <body>
+    <header ng-controller='headerController as headerCtrl'>
+      <h5>Welcome! insert tag line here...</h5>
+      <h2 ng-click='loginClick()' class='login-button header-button'>Login</h2>
+      <h2 ng-click='signUpClick()' class='sign-up-button header-button'>Sign Up!</h2>
+    </header>
+    <div class="main">
+      <div class='title-bar'>
+        <h1>1337-bored</h1>
+      </div>
+      <div class='tabs' ng-controller='tabsController as tabsCtrl'>
+        <button ng-click='setTab(0)' id='leaderboard-tab' class='tab'>Leaderboard</button>
+        <button ng-click='setTab(1)' id='userpage-tab' class='tab'>My Page</button>
+        <button ng-click='setTab(2)' id='profile-tab' class='tab'>Profile</button>
+        <button ng-click='setTab(3)' id='search-tab' class='tab'>Search Users</button>
+      </div>
+
+      <div class = 'container'>
+        <!--   LOGIN PORTAL   -->
+        <div class="login" ng-controller='loginController as loginCtrl' ng-show='showLogin()' >
+          <login-page></login-page>
+        </div>
+
+        <!--   LEADERBOARD PORTAL   -->
+        <div class='leaderboard' ng-show = 'leaderboardCtrl.show()' ng-controller='leaderboardController as leaderboardCtrl'>
+          <table class='leaderboard-table'>
+            <thead>
+              <td class='leaderboard-table-header'>User Name</td><td class='leaderboard-table-header'>Wins</td><td class='leaderboard-table-header'>Losses</td><td class='leaderboard-table-header'>Win:Loss Ratio</td>
+            </thead>
+            <tr class='leaderboard-user' ng-repeat='user in leaderboardCtrl.leaderboard'>
+              <td>{{user.userName}}</td><td>{{user.wins}}</td><td>{{user.losses}}</td><td>{{user.ratio()}}</td>
+            </tr>
+          </table>
+        </div>
+
+        <!--   USERPAGE PORTAL   -->
+        <div class='user-stats' ng-show='userPageCtrl.show()' ng-controller='userPageController as userPageCtrl'>
+          <table class='user-stats-table'>
+            <tr class='user-table-row' ng-repeat='stat in userPageCtrl.stats'>
+              <td>{{stat.game}}</td><td>{{stat.opponents}}</td><td>{{stat.score}}</td><td>{{stat.win_loss}}</td>
+            </tr>
+          </table>
+        </div>
+
+
+        <!--  SEARCH PORTAL   -->
+        <div class='search-users' ng-show='searchCtrl.show()' ng-controller='searchUsersController as searchCtrl'>
+          <form class='search-users-form'>
+            Enter Search Criteria: <input class='search-users-input'></input>
+          </form>
+        </div>
+
+      </div>
+
+      <div class='SPACE-INVADERS'>
+        <img src = 'misc/space_invaders.png'/>
+      </div>
+      
   </body>
 
 </html>
