@@ -46,6 +46,16 @@ body{
 	top: 100px;
 }
 
+.user-stats{
+}
+
+.profile{
+	position: relative;
+	display: block;
+	margin-top: 90px;
+	margin-left: 30px;
+}
+
 .SPACE-INVADERS{
 	position: absolute;
 	bottom: 20px;

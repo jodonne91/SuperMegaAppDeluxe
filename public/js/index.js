@@ -114,6 +114,19 @@
 		}
 	}])
 
+	app.controller('profilePageController', [function(){
+		this.userName = 'jodonne'
+		this.loggedIn = function(){
+
+		}
+		this.show = function(){
+			if(currentTab === 2){
+				return true;
+			}
+			return false;
+		}
+	}])
+
 
 
 

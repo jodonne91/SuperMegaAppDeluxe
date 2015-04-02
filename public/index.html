@@ -60,6 +60,11 @@
           </table>
         </div>
 
+        <!--  PROFILE PORTAL  -->
+        <div class='profile' ng-show='profileCtrl.show()' ng-controller='profilePageController as profileCtrl'>
+          <h3>Username: {{profileCtrl.userName}}</h3>
+        </div>
+
 
         <!--  SEARCH PORTAL   -->
         <div class='search-users' ng-show='searchCtrl.show()' ng-controller='searchUsersController as searchCtrl'>
@@ -67,7 +72,6 @@
             Enter Search Criteria: <input class='search-users-input'></input>
           </form>
         </div>
-
       </div>
 
       <div class='SPACE-INVADERS'>
